@@ -1,0 +1,11 @@
+{
+	"name" : "large-network-management",
+	"type" : "wordpress-plugin",
+	"license" : "GPL-2.0-or-later",
+	"minimum-stability": "dev",
+	"autoload" : {
+		"classmap" : ["includes"],
+		"exclude-from-classmap": ["components/"]
+	},
+	"require": {}
+}
