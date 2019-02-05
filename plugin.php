@@ -41,7 +41,7 @@ class Large_Network_Management_Plugin extends _Large_Network_Management_Plugin {
 		// can also hook into 'wp_is_large_networ' after us.
 		add_filter( 'wp_is_large_network', '__return_true', 9 );
 
-		add_action( 'plugins_loaded', array( $this, 'setup' ) );
+		add_action( 'init', array( $this, 'setup' ) );
 
 		return;
 	}
@@ -49,9 +49,14 @@ class Large_Network_Management_Plugin extends _Large_Network_Management_Plugin {
 	/**
 	 * Perform setup operations.
 	 *
+	 * Cannot be hooked earlier than init, to avoid calling `is_admin_bar_showing()` before
+	 * the query is run (e.g., on the front-end).
+	 *
 	 * @since 0.1.0
 	 *
 	 * @return void
+	 *
+	 * @action init
 	 */
 	function setup() {
 		global $pagenow;
@@ -61,10 +66,11 @@ class Large_Network_Management_Plugin extends _Large_Network_Management_Plugin {
 			return;
 		}
 
-		if ( is_admin() || is_admin_bar_showing() ) {
+		if ( is_admin_bar_showing() ) {
 			Large_Network_Management_My_Sites::get_instance();
 			Large_Network_Management_Get_Blogs_Of_User::get_instance();
 		}
+
 		if ( is_network_admin() && 'users.php' === $pagenow ) {
 			Large_Network_Management_Network_Users::get_instance();
 		}
