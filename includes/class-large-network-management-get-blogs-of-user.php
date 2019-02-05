@@ -71,6 +71,9 @@ class Large_Network_Management_Get_Blogs_Of_User extends _Large_Network_Manageme
 			'_wp_admin_bar_init',
 			// indirectly calls get_blogs_of_user().
 			'get_dashboard_url',
+			// calls get_blogs_of_user() the first time the Dashboard is visited on a site
+			// if the Quick Draft metabox is enabled.
+			'wp_dashboard_quick_press',
 			// WP_MS_Users_List_Table::column_blogs().
 			array( 'WP_MS_Users_List_Table', 'column_blogs' ),
 		);
