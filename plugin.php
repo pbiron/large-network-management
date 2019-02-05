@@ -3,7 +3,7 @@
 /*
  * Plugin Name: Large Network Management
  * Description: Optimize admin management of large networks
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: Paul V. Biron/Sparrow Hawk Computing
  * Author URI: https://sparrowhawkcomputing.com
  * Plugin URI: https://github.com/pbiron/large-network-management

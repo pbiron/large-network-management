@@ -1,8 +1,8 @@
 {
   "name": "large-network-management",
   "plugin_name": "Large Network Management",
-  "version": "0.1.0",
-  "tested_up_to": "5.1-beta2",
+  "version": "0.1.1",
+  "tested_up_to": "5.1-beta3",
   "description": "Optimize admin management of large networks",
   "author": "Paul V. Biron/Sparrow Hawk Computing",
   "repository_base": "https://github.com/pbiron",

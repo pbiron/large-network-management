@@ -3,9 +3,9 @@
 **Contributors:** [pbiron](https://profiles.wordpress.org/pbiron)  
 **Tags:** multisite, admin  
 **Requires at least:** 4.6  
-**Tested up to:** 5.1-beta2  
+**Tested up to:** 5.1-beta3  
 **Requires PHP:** 5.6  
-**Stable tag:** 0.1.0  
+**Stable tag:** 0.1.1  
 **License:** GPL-2.0-or-later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z6D97FA595WSU  
@@ -48,6 +48,11 @@ From your WordPress dashboard
 * for users that aren't short circuited and have more than _m_ blogs, have the adminbar _My Sites_ list their blogs in sub-menus (e.g., **A-E**, **F-I**, etc)
 
 ## Changelog ##
+
+### 0.1.1 ###
+
+* hook Large_Network_Management_Plugin::setup() to 'init' instead of 'plugins_loaded' to avoid calling is_admin_bar_showing() before the query is run on the front-end
+* Added 'wp_dashboard_quick_press()' to the list of "expensive" calls of get_blogs_of_user()
 
 ### 0.1.0 ###
 
